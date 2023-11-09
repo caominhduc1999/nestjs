@@ -4,7 +4,10 @@ import { UserService } from "./user.service";
 import { StoreModule } from "src/store/store.module";
 
 @Module({
-    imports: [StoreModule],
+    imports: [StoreModule.register({
+        dirname: 'store',
+        filename: 'user.json'
+    })],
     controllers: [UserController],
     providers: [{
         provide: 'USER_SERVICE',
